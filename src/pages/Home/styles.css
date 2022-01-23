@@ -1,0 +1,24 @@
+.titleHome{
+    font-size: 60px;
+    font-family: "Roboto", sans-serif;
+    
+    width: 452px;
+}
+
+.description{
+    font-family: "Roboto", sans-serif;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 19px;
+    width: 441px;
+}
+
+.imageHome{
+    width: 779px;
+    height: 500px;
+    
+}
+
+.info{
+    text-align: center;
+}
