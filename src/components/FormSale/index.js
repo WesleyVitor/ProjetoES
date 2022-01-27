@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-
-const Form = ({addSale, initialSale})=>{
+import "./styles.css";
+const FormSale = ({addSale, initialSale})=>{
     const [sale, setSale] = useState(initialSale);
     const keys = Object.keys(initialSale);
     const handleInputChange = (event)=>{
@@ -25,11 +25,11 @@ const Form = ({addSale, initialSale})=>{
             <input type="date" name={keys[5]} value={sale.saleDate} onChange={handleInputChange}/>
             <label>Data de Entrega:</label>
             <input type="date" name={keys[6]} value={sale.deliveryDate} onChange={handleInputChange}/>
-            <input type="submit" value="Comprar"/>
+            <input type="submit" value="Adicionar"/>
 
         </form>
     );
 
 }
 
-export default Form;
+export default FormSale;

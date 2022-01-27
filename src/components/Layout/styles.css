@@ -32,5 +32,5 @@ header{
 main{
     margin-left: 88px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
