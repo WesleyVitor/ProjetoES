@@ -14,7 +14,7 @@ const Home = ()=>{
             </div>
             
             
-            <img className='imageHome' alt='imageHome' src="https://media.istockphoto.com/photos/hanging-tools-picture-id96356725" />
+            <img className='imageHome' alt='imageHome' src="/builder2.png" />
         </Layout>
         
         
