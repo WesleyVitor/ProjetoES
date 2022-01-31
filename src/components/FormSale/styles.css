@@ -1,4 +1,4 @@
-.form-sale{
+.form-sale {
     display: flex;
     flex-direction: column;
     border: 1px solid #333;
@@ -6,7 +6,7 @@
     border-radius: 5%;
 }
 
-.form-sale input{
+.form-sale input {
     margin-bottom: 10px;
     border: none;
     border-bottom: 1px solid #333;

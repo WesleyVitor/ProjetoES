@@ -1,22 +1,22 @@
-.title-sale{
+.title-sale {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
-.title-table{
+.title-table {
     text-align: center;
 }
 
-table{
-    font-family: 'Roboto', sans-serif;
+table {
+    font-family: "Roboto", sans-serif;
     border-collapse: separate;
     border-spacing: 5px;
 }
 
 .tableHead th {
-    font-size: 1.3rem;  
+    font-size: 1.3rem;
 }
 
-.tableBody td{
+.tableBody td {
     font-size: 1.2rem;
 }

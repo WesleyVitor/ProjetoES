@@ -1,36 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-header{
+header {
     margin-bottom: 100px;
 }
 
-.Menu{
+.Menu {
     list-style: none;
     display: flex;
     justify-content: center;
     padding: 0px;
-    
 }
 
-.itemMenu{
-    font-family: 'Roboto', sans-serif;
+.itemMenu {
+    font-family: "Roboto", sans-serif;
     font-size: 24px;
     font-weight: 500;
-    line-height: 28,13px;  
+    line-height: 28, 13px;
     margin-left: 50px;
-    
-
 }
-.itemMenu a{
+.itemMenu a {
     text-decoration: none;
     color: #303030;
 }
 
-
-
-main{
+main {
     margin-left: 88px;
     display: flex;
     justify-content: space-evenly;
 }
-
