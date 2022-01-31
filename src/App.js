@@ -1,23 +1,7 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './pages/Home';
-import Product from './pages/Product';
-import Client from './pages/Client';
-import Sale from './pages/Sale';
+import Router from './Router';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/produto" element={<Product/>}/>
-        <Route path="/cliente" element={<Client/>}/>
-        <Route path="/venda" element={<Sale/>}/>
-        
-
-      </Routes>
-    
-    </BrowserRouter>
-  );
+  return <Router />
 }
 
 export default App;
