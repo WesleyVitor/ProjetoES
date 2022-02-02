@@ -2,10 +2,15 @@
 
 header {
     margin-bottom: 100px;
+    width: 100%;
+    background: rgb(158, 156, 21);
+
+    padding: 15px;
 }
 
 .Menu {
     list-style: none;
+    margin: 0;
     display: flex;
     justify-content: center;
     padding: 0px;
@@ -18,9 +23,14 @@ header {
     line-height: 28, 13px;
     margin-left: 50px;
 }
+
 .itemMenu a {
     text-decoration: none;
     color: #303030;
+}
+
+.itemMenu a:hover {
+    color: rgb(209, 208, 172);
 }
 
 main {
