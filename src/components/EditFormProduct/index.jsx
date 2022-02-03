@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Button from "../Button";
 
-import "./styles.css";
 const EditFormProduct = ({ currentProduct, updateProduct }) => {
     const [product, setProduct] = useState(currentProduct);
     useEffect(() => {
@@ -15,7 +15,7 @@ const EditFormProduct = ({ currentProduct, updateProduct }) => {
 
     return (
         <form
-            className="form-sale"
+            className="form"
             onSubmit={(event) => {
                 event.preventDefault();
                 updateProduct(product);
@@ -23,6 +23,7 @@ const EditFormProduct = ({ currentProduct, updateProduct }) => {
             }}
         >
             <input
+                autoComplete="off"
                 type="text"
                 name="name"
                 value={product.name}
@@ -30,6 +31,7 @@ const EditFormProduct = ({ currentProduct, updateProduct }) => {
                 onChange={handleInputChange}
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="amount"
                 value={product.amount}
@@ -37,13 +39,15 @@ const EditFormProduct = ({ currentProduct, updateProduct }) => {
                 onChange={handleInputChange}
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="value"
                 value={product.value}
                 placeholder="Valor"
                 onChange={handleInputChange}
             />
-            <input type="submit" value="Adicionar" />
+
+            <Button text="Adicionar" type="submit" />
         </form>
     );
 };

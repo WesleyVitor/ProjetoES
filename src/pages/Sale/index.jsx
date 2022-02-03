@@ -24,11 +24,11 @@ const Sale = () => {
     return (
         <Layout>
             <div>
-                <h1 className="title-sale">Carrinho</h1>
+                <h1 className="titleForm">Carrinho</h1>
                 <FormSale addSale={addSale} />
             </div>
             <div>
-                <h1 className="title-table">Histórico</h1>
+                <h1 className="titleTable">Histórico</h1>
                 <table>
                     <thead className="tableHead">
                         <tr>

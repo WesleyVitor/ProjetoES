@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./styles.css";
+import Button from "../Button";
+
 const FormSale = ({ addSale }) => {
     const initialSale = {
         id: 0,
@@ -20,7 +21,7 @@ const FormSale = ({ addSale }) => {
 
     return (
         <form
-            className="form-sale"
+            className="form"
             onSubmit={(event) => {
                 event.preventDefault();
                 addSale(sale);
@@ -28,6 +29,7 @@ const FormSale = ({ addSale }) => {
             }}
         >
             <input
+                autoComplete="off"
                 type="text"
                 name="product"
                 value={sale.product}
@@ -35,6 +37,7 @@ const FormSale = ({ addSale }) => {
                 onChange={handleInputChange}
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="client"
                 value={sale.client}
@@ -42,6 +45,7 @@ const FormSale = ({ addSale }) => {
                 onChange={handleInputChange}
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="value"
                 value={sale.value}
@@ -49,6 +53,7 @@ const FormSale = ({ addSale }) => {
                 onChange={handleInputChange}
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="amount"
                 value={sale.amount}
@@ -57,12 +62,14 @@ const FormSale = ({ addSale }) => {
             />
             <label>Data de Entrega:</label>
             <input
+                autoComplete="off"
                 type="date"
                 name="deliveryDate"
                 value={sale.deliveryDate}
                 onChange={handleInputChange}
             />
-            <input type="submit" value="Adicionar" />
+
+            <Button text="Adicionar" type="submit" />
         </form>
     );
 };

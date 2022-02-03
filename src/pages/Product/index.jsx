@@ -2,23 +2,26 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import FormProduct from "../../components/FormProduct";
 import EditFormProduct from "../../components/EditFormProduct";
-//const storage = window.localStorage;
+import Button from "../../components/Button";
 
 const Product = () => {
     const [products, setProducts] = useState([]);
     const [editing, setEditing] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
-    // useEffect(() => {
-    //     setProducts(JSON.parse(storage.getItem("db_sale")) ?? []);
-    // }, []);
 
-    // useEffect(() => {
-    //     storage.setItem("db_sale", JSON.stringify(products));
-    // }, [products]);
+    useEffect(() => {
+        const storageValue = localStorage.getItem("products");
 
-    // const handleLocalStorage = () => {
-    //     return JSON.parse(storage.getItem("db_sale")) ?? [];
-    // };
+        if (storageValue) {
+            return setProducts(JSON.parse(storageValue));
+        } else {
+            return setProducts([]);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("products", JSON.stringify(products));
+    }, [products]);
 
     const addProduct = (product) => {
         product.id = products.length + 1;
@@ -60,7 +63,7 @@ const Product = () => {
             <div>
                 {editing ? (
                     <>
-                        <h1 className="title-sale">Editar Produto</h1>
+                        <h1 className="titleForm">Editar Produto</h1>
                         <EditFormProduct
                             currentProduct={currentProduct}
                             updateProduct={updateProduct}
@@ -68,13 +71,13 @@ const Product = () => {
                     </>
                 ) : (
                     <>
-                        <h1 className="title-sale">Cadastrar Produto</h1>
+                        <h1 className="titleForm">Cadastrar Produto</h1>
                         <FormProduct addProduct={addProduct} />
                     </>
                 )}
             </div>
             <div>
-                <h1 className="title-table">Lista de Produtos</h1>
+                <h1 className="titleTable">Lista de Produtos</h1>
                 <table>
                     <thead className="tableHead">
                         <tr>
@@ -93,20 +96,16 @@ const Product = () => {
                                         <td>{product.value}</td>
                                         <td>{product.amount}</td>
                                         <td>
-                                            <button
-                                                onClick={() =>
-                                                    removeProduct(product.id)
-                                                }
-                                            >
-                                                Remover
-                                            </button>
-                                            <button
-                                                onClick={() =>
-                                                    editProduct(product)
-                                                }
-                                            >
-                                                Editar
-                                            </button>
+                                            <Button
+                                                handleProduct={removeProduct}
+                                                value={product.id}
+                                                text="Remover"
+                                            />
+                                            <Button
+                                                handleProduct={editProduct}
+                                                value={product}
+                                                text="Editar"
+                                            />
                                         </td>
                                     </tr>
                                 );

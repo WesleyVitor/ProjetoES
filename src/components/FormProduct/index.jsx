@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./styles.css";
+import Button from "../Button";
+
 const FormProduct = ({ addProduct }) => {
     const initialProduct = {
         id: 0,
@@ -19,7 +20,7 @@ const FormProduct = ({ addProduct }) => {
 
     return (
         <form
-            className="form-sale"
+            className="form"
             onSubmit={(event) => {
                 event.preventDefault();
                 addProduct(product);
@@ -27,27 +28,33 @@ const FormProduct = ({ addProduct }) => {
             }}
         >
             <input
+                autoComplete="off"
                 type="text"
+                required
                 name="name"
                 value={product.name}
                 placeholder="Produto"
                 onChange={handleInputChange}
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="amount"
                 value={product.amount}
                 placeholder="Quantidade"
                 onChange={handleInputChange}
+                required
             />
             <input
+                autoComplete="off"
                 type="text"
                 name="value"
                 value={product.value}
                 placeholder="Valor"
                 onChange={handleInputChange}
+                required
             />
-            <input type="submit" value="Adicionar" />
+            <Button text="Adicionar" type="submit" />
         </form>
     );
 };
