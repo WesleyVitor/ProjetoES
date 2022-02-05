@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../Button";
 
-const FormSale = ({ addSale }) => {
-    const initialSale = {
-        id: 0,
-        product: "",
-        client: "",
-        value: "",
-        amount: "",
-    };
-    const [sale, setSale] = useState(initialSale);
-
+const EditFormClient = ({ currentClient, updateClient }) => {
+    const [client, setClient] = useState(currentClient);
+    useEffect(() => {
+        setClient(currentClient);
+    }, [currentClient]);
     const handleInputChange = (event) => {
-        console.log(event.target);
         const { name, value } = event.target;
 
-        setSale({ ...sale, [name]: value });
+        setClient({ ...client, [name]: value });
     };
 
     return (
@@ -23,46 +17,48 @@ const FormSale = ({ addSale }) => {
             className="form"
             onSubmit={(event) => {
                 event.preventDefault();
-                addSale(sale);
-                setSale(initialSale);
+                updateClient(client);
+                //setProduct(initialProduct);
             }}
         >
             <input
                 autoComplete="off"
                 type="text"
-                name="product"
-                value={sale.product}
-                placeholder="Produto"
+                required
+                name="name"
+                value={client.name}
+                placeholder="Nome"
                 onChange={handleInputChange}
             />
             <input
                 autoComplete="off"
                 type="text"
-                name="client"
-                value={sale.client}
-                placeholder="CPF Cliente"
+                name="cpf"
+                value={client.cpf}
+                placeholder="CPF"
                 onChange={handleInputChange}
+                required
             />
             <input
                 autoComplete="off"
                 type="text"
                 name="value"
-                value={sale.value}
-                placeholder="Valor"
+                value={client.email}
+                placeholder="Email"
                 onChange={handleInputChange}
+                required
             />
             <input
                 autoComplete="off"
                 type="text"
-                name="amount"
-                value={sale.amount}
-                placeholder="Quantidade"
+                name="value"
+                value={client.phone}
+                placeholder="Celular"
                 onChange={handleInputChange}
             />
-
             <Button text="Adicionar" type="submit" />
         </form>
     );
 };
 
-export default FormSale;
+export default EditFormClient;
