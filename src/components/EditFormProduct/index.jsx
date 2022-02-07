@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button";
 
-const EditFormProduct = ({ currentProduct, updateProduct }) => {
+const EditFormProduct = ({ currentProduct, updateProduct, setEditing }) => {
     const [product, setProduct] = useState(currentProduct);
     useEffect(() => {
         setProduct(currentProduct);
@@ -46,8 +46,10 @@ const EditFormProduct = ({ currentProduct, updateProduct }) => {
                 placeholder="Valor"
                 onChange={handleInputChange}
             />
-
-            <Button text="Adicionar" type="submit" />
+            <div className="buttonEditingArea">
+                <Button text="Editar" type="submit" />
+                <Button onClick={() => setEditing(false)} text="Cancelar" />
+            </div>
         </form>
     );
 };

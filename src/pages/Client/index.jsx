@@ -30,6 +30,7 @@ const Client = () => {
     };
 
     const removeClient = (id) => {
+        setEditing(false);
         const newClients = clients.map((client) =>
             client.id === id ? (client.active = false) : client
         );
@@ -68,6 +69,7 @@ const Client = () => {
                         <EditFormClient
                             currentClient={currentClient}
                             updateClient={updateClient}
+                            setEditing={setEditing}
                         />
                     </>
                 ) : (

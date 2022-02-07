@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button";
 
-const EditFormClient = ({ currentClient, updateClient }) => {
+const EditFormClient = ({ currentClient, updateClient, setEditing }) => {
     const [client, setClient] = useState(currentClient);
     useEffect(() => {
         setClient(currentClient);
@@ -56,7 +56,11 @@ const EditFormClient = ({ currentClient, updateClient }) => {
                 placeholder="Celular"
                 onChange={handleInputChange}
             />
-            <Button text="Adicionar" type="submit" />
+
+            <div className="buttonEditingArea">
+                <Button text="Editar" type="submit" />
+                <Button onClick={() => setEditing(false)} text="Cancelar" />
+            </div>
         </form>
     );
 };

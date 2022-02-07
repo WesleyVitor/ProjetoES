@@ -30,6 +30,7 @@ const Product = () => {
     };
 
     const removeProduct = (id) => {
+        setEditing(false);
         const newProducts = products.map((product) =>
             product.id === id ? (product.active = false) : product
         );
@@ -67,6 +68,7 @@ const Product = () => {
                         <EditFormProduct
                             currentProduct={currentProduct}
                             updateProduct={updateProduct}
+                            setEditing={setEditing}
                         />
                     </>
                 ) : (
